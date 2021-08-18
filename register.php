@@ -22,7 +22,7 @@
                         <input type="text" class="form-control login-input" name="txtLName" placeholder="Last Name">
                         <input type="text" class="form-control login-input" name="txtPassword" placeholder="Password">
                         <input type="text" class="form-control login-input" name="txtConfirmPassword" placeholder="Confirm Password">
-                        <button class="btn btn-login">REGISTER</button><br>
+                        <button class="btn btn-login">Register</button><br>
                         <hr style="margin-top:50px">
                         <div style="margin-top:30px; margin-bottom:20px">
                             <a>Already have an account?</a><a href="login.php"> Login</a>

@@ -10,10 +10,10 @@
     
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="image/imagebrand/product4.png" class="d-block w-100" >
+        <img src="image/imagebrand/product.png" class="d-block w-100" >
       </div>
       <div class="carousel-item" >
-        <img src="image/imagebrand/product5.png" class="d-block w-100">
+        <img src="image/imagebrand/product1.png" class="d-block w-100">
       </div>
     
     </div>
@@ -29,7 +29,9 @@
 
   </div>
 
-  <div style="width:90%; margin-top:20px;">
+	<p style="text-align:left; width:80%; margin-top:30px; font-size:30px;" >Anllo</p>
+
+  <div style="width:90%; margin-top:-10px;">
     <hr style="width:89%; border:1px solid #C7BBE2;">
 
 

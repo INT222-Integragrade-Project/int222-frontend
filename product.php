@@ -8,7 +8,7 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     </ol>
     
-    <div class="carousel-inner" >
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="image/imagebrand/product4.png" class="d-block w-100" >
       </div>
@@ -37,6 +37,7 @@
 		<div class="btn-group" >
 		<label class="btn dropdown-toggle" href="#" role="button" id="dropdownBrand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">BRAND</label>
 			<div class="dropdown-menu" aria-labelledby="dropdownBrand">
+				<a class="dropdown-item">None</a>
 				<a class="dropdown-item">Anello</a>
 				<a class="dropdown-item">Chanel</a>
 				<a class="dropdown-item">Dior</a>
@@ -49,6 +50,7 @@
 		<div class="btn-group">
 		<label class="btn dropdown-toggle" href="#" role="button" id="dropdownColor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COLOR</label>
 			<div class="dropdown-menu" aria-labelledby="dropdownColor">
+				<a class="dropdown-item">None</a>
 				<a class="dropdown-item">Blue</a>
 				<a class="dropdown-item">Green</a>
 				<a class="dropdown-item">Red</a>
@@ -70,6 +72,7 @@
 		<div class="btn-group" style="float: right;">
 		<label class="btn dropdown-toggle" href="#" role="button" id="dropdownSortby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SORT BY PRICE</label>
 			<div class="dropdown-menu" aria-labelledby="dropdownSortby">
+				<a class="dropdown-item">None</a>
 				<a class="dropdown-item">Low to high</a>
 				<a class="dropdown-item">High to low</a>
 			</div>
@@ -78,6 +81,8 @@
 	</div>
 
   <hr style="width:89%;border:1px solid #C7BBE2;">
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 </div>

@@ -22,7 +22,7 @@
                         <button class="btn btn-login">Log In</button><br>
                         <hr style="margin-top:50px">
                         <div style="margin-top:30px; margin-bottom:20px">
-                            <a href="register.php">Create New Account</a>
+                        <a>Don’t have an account?</a><a href="register.php"> Register</a>
                         </div>
 
 

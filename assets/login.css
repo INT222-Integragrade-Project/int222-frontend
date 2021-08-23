@@ -18,7 +18,7 @@ body {
 }
 
 .login-logo-desc {
-    margin: 0% auto;
+    margin: 12% auto;
     position: relative;
     top: 0px;
     left: 30px;
@@ -63,7 +63,7 @@ body {
     }
     
     .login-form {
-        margin: 25% auto;
+        margin: 18% auto;
         width: 60%;
     }
 
@@ -92,10 +92,11 @@ body {
     .login-logo-desc {
         font-size: 17px;
         left: 100px;
+        margin: 2% auto;
     }
 
     .login-form {
-        margin: 0% auto;
+        margin: -5% auto;
         width: 40%;
     }
 
@@ -104,7 +105,7 @@ body {
 @media only screen and (max-width: 950px) {
     
     .login-form {
-        margin: 8% auto;
+        margin: -5% auto;
         width: 50%; 
     }
     
@@ -113,7 +114,7 @@ body {
 @media only screen and (max-width: 700px) {
 
     .login-form {
-        margin: 8% auto;
+        margin: -5% auto;
         width: 60%; 
     }
 }
@@ -126,7 +127,7 @@ body {
     }
 
     .login-form {
-        margin: 8% auto;
+        margin: 0% auto;
         width: 75%; 
     }
 }

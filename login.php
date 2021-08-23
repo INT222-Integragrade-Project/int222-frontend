@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xl" style="text-align: center;">
                     <div class="login-logo">
-                        <img src="image/app/Logo.png" style="width:100%">
+                        <img src="image/app/Logo.png" style="width:100%; margin:-15%">
                         <p class="login-logo-desc">The Dora website has bags from a variety of brands. <br> For the convenience of shopping.</p>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xl" style="text-align: center;">
                     <div class="login-logo">
-                        <img src="image/app/Logo.png" style="width:100%">
+                    <img src="image/app/Logo.png" style="width:100%; margin:-15%">
                         <p class="login-logo-desc">The Dora website has bags from a variety of brands. <br> For the convenience of shopping.</p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md">
                     <div class="login-form">
-                        <div style="color:#8966D7;margin:20px auto;font-weight:bold;font-size:18px;">REGISTER A NEW ACCOUNT</div>
+                        <div style="color:#8966D7;margin:10px auto;font-weight:bold;font-size:18px;">REGISTER A NEW ACCOUNT</div>
                         <form action="dologin.php" method="post">
                             <input type="text" class="form-control login-input" name="txtUserName" placeholder="User Name">
                             <input type="text" class="form-control login-input" name="txtName" placeholder="Name">

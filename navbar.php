@@ -49,7 +49,7 @@
     </li>
 
     <!-- right -->
-    <?php if(isset($_SESSION["username"])){ ?>
+    <?php if(isset($_SESSION["username"]) && $_SESSION["usertype"] !== "user"){ ?>
         <li class="nav-menu-item-right-link margin-right-menu">
             <div id="menu-button" >
                 <a class="menu-link" href="#sidebar">
@@ -59,7 +59,7 @@
         </li>
     <?php } ?>
     
-    <?php $right_menu_item = isset($_SESSION["username"]) ? "" : "margin-right-menu"; ?>
+    <?php $right_menu_item = isset($_SESSION["username"])  && $_SESSION["usertype"] !== "user" ? "" : "margin-right-menu"; ?>
     <li class="nav-menu-item-right-link <?= $right_menu_item ?>">
         <a class="menu-link" href="#like">
             <span class="material-icons">favorite_border</span>
@@ -76,7 +76,7 @@
                     <?= $_SESSION["username"] ?>
                 </label>
                 <a class="dropdown-item nav-dropdown-item" href="profile.php">Profile</a>
-                <a class="dropdown-item nav-dropdown-item" href="logout.php">
+                <a class="dropdown-item nav-dropdown-item" href="dologout.php">
                     Log out 
                     <span class="material-icons material-icons-logout">logout</span>
                 </a>
@@ -155,7 +155,7 @@
                     <?= $_SESSION["username"] ?>
                 </label>
                 <a class="dropdown-item nav-dropdown-item" href="profile.php">Profile</a>
-                <a class="dropdown-item nav-dropdown-item" href="logout.php">
+                <a class="dropdown-item nav-dropdown-item" href="dologout.php">
                     Log out 
                     <span class="material-icons material-icons-logout">logout</span>
                 </a>
@@ -185,18 +185,21 @@
             <a href="javascript:void(0)" class="close-sidebar"><i class="bi bi-x" style="font-size: 40px;"></i></a>
         </div>
     </div>
-    <a href="#add_product">
-        <div class="sidebar-icon">
-            <span class="material-icons-round">grid_view</span>
-            Add Product
-        </div>
-    </a>
+
     <a href="#my_product">
         <div class="sidebar-icon">
             <span class="material-icons-round">ballot</span>
             My Product
         </div>
     </a>
+
+    <a href="addproduct.php">
+        <div class="sidebar-icon">
+            <span class="material-icons-round">grid_view</span>
+            Add Product
+        </div>
+    </a>
+
     <a href="#members">
         <div class="sidebar-icon">
             <span class="material-icons">people_alt</span>

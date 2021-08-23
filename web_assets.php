@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" href="assets/app.css">
     <link rel="stylesheet" href="assets/navbar.css">
+    <link rel="stylesheet" href="assets/login.css">
 
 </head> 
 

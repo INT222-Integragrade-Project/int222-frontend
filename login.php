@@ -44,12 +44,12 @@
             </div>
 
             <div class="row">
-                <div class="col-md">
-                    <div class="login-form">
+                <div class="col-md form-group">
+                    <div class="login-form ">
                         <form action="dologin.php" method="post">
                             <input type="text" class="form-control login-input" name="txtUserName" placeholder="User Name">
-                            <input type="text" class="form-control login-input" name="txtPassword" placeholder="Password">
-                            <button class="btn btn-login">Log In</button><br>
+                            <input type="password" class="form-control" name="txtPassword" placeholder="Password">
+                            <button type="submit" class="btn btn-login">Log In</button><br>
                             <hr style="margin-top:50px">
                             <div style="margin-top:30px; margin-bottom:20px">
                                 <a>Don’t have an account?</a><a href="register.php"> Register</a>
@@ -62,6 +62,13 @@
         </div>
 
     </div>
+    <form>
 
+
+
+
+  
+
+</form>
 </body>
 </html>

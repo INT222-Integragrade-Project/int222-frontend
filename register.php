@@ -55,8 +55,8 @@
                             <input type="text" class="form-control login-input" name="txtUserName" placeholder="User Name">
                             <input type="text" class="form-control login-input" name="txtName" placeholder="Name">
                             <input type="text" class="form-control login-input" name="txtLName" placeholder="Last Name">
-                            <input type="text" class="form-control login-input" name="txtPassword" placeholder="Password">
-                            <input type="text" class="form-control login-input" name="txtConfirmPassword" placeholder="Confirm Password">
+                            <input type="password" class="form-control login-input" name="txtPassword" placeholder="Password">
+                            <input type="password" class="form-control login-input" name="txtConfirmPassword" placeholder="Confirm Password">
                             <button class="btn btn-login">Register</button><br>
                             <hr style="margin-top:50px">
                             <div style="margin-top:30px; margin-bottom:20px">

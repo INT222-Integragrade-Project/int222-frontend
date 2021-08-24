@@ -3,6 +3,19 @@
 
 <?php include("web_assets.php"); ?>
 
+<style>
+.login-form {
+    margin: 13% auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .login-form {
+        margin: -5% auto;
+    }
+}
+
+</style>
+
 <body>
 
     <div class="container-fluid">

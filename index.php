@@ -107,6 +107,129 @@
 			
 		<hr style="border:1px solid #C7BBE2;margin-top:0px;">
 
+<style>
+
+	#product-content {
+		background-color: #ffffff;
+		min-height: 1000px;
+		padding: 10px 0px 0px 30px;
+		
+	}
+
+	#product-content .col-md-3 {
+		padding-right: 25px;
+    	padding-left: 0px;
+		/* margin-left: 0px; */
+	}
+	
+	.div-product {
+		position: relative;
+		width: 100%;
+		min-height: 395px;
+		background-color: #fbfbfb;
+		box-shadow: 1px 1px 5px #cccccc;
+		border-radius: 15px;
+		margin: 30px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		overflow: hidden;
+	}
+
+	.div-product:hover {
+		background-color: #e8e8e8;
+	}
+
+	.div-product .col-md {
+		padding-right: 0px;
+    	padding-left: 0px;
+	}
+
+	.div-product img {
+		width: 100%;
+		max-height: 300px;
+		box-shadow: 1px 0px 2px #cccccc;
+	}
+
+	.div-product .div-product-favorite {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+
+	}
+
+	.div-product-title {
+		position: absolute;
+		top: 300px;
+		left: 20px;
+		font-size: 20px;
+	}
+
+	.div-product-price {
+		position: absolute;
+		bottom: 10px;
+		right: 20px;
+		color: #ff0000;
+	}
+
+	
+	.link-custom {
+		color: #555555;
+
+	}
+
+	.link-custom:hover {
+		color: #f4a29d;
+		text-decoration: none;
+	}
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		// $(".div-product-favorite").hover(function(){
+		// 	this(".material-icons-outlined").html("favorite");
+		// });
+	});
+
+</script>
+		<?php $loop = [1,2,3,4,5,6] ?>
+
+		<div id="product-content">
+
+			<div class="row justify-content-sm-left" style="margin:0px;">
+
+				<?php foreach($loop as $key => $value): ?>
+					<div class="col-md-3">
+						<div class="div-product">
+							
+							<div class="div-product-img">
+								<img src="image/product/Dior/PD1/PD1Red.png">
+								<!-- <img src="image/product/Anello/PA1/PA1Pink.png"> -->
+							</div>
+
+							<div class="div-product-favorite">
+								<!-- favorite -->
+								<!-- favorite_border -->
+								<a id="favorite-<?= $key ?>" class="link-custom" href="#"><span class="material-icons-outlined">favorite_border</span></a>
+							</div>
+
+							<div class="div-product-title">
+								Product Name
+							</div>
+							
+							<div class="div-product-price">
+								THB <?= number_format(3500); ?> 
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
+
+			</div>
+
+		</div>
+		
+
 	</div>
 	
 </body>

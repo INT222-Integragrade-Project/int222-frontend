@@ -16,7 +16,7 @@
 
 </style>
 
-<body>
+<body class="bg-login">
 
     <div class="container-fluid">
 

@@ -59,3 +59,7 @@ body {
 .buttoncircle:hover {
     border: 4px solid #76B5FF;
 }
+
+.carousel {
+    box-shadow: 1px 1px 10px #cccccc;
+}

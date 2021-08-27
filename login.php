@@ -3,7 +3,7 @@
 
 <?php include("web_assets.php"); ?>
 
-<body>
+<body class="bg-login">
   
     <div class="container-fluid">
         
@@ -62,13 +62,13 @@
         </div>
 
     </div>
-    <form>
+   
 
 
 
 
   
 
-</form>
+
 </body>
 </html>

@@ -108,8 +108,8 @@
             <div class="col-md" style="text-align: center;">
 
                 <div class="my-profile">
-                    
-                    <form action="update_profile.php" method="post">
+                    <!-- action ไปหน้า update profile  -->
+                    <form action="#" method="post">
                         
                         <div class="row">
                             <div class="col-md">

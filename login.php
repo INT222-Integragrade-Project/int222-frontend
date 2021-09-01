@@ -46,7 +46,8 @@
             <div class="row">
                 <div class="col-md">
                     <div class="login-form ">
-                        <form action="dologin.php" method="post">
+                        <!-- action ไปหน้าที่เข้าสู่ระบบ -->
+                        <form action="#" method="post">
                             <input type="text" class="form-control login-input" name="txtUserName" placeholder="User Name">
                             <input type="password" class="form-control login-input" name="txtPassword" placeholder="Password">
                             <button type="submit" class="btn btn-login">Log In</button><br>

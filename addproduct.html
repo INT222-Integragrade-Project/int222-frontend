@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DoraWeb</title>
+
+	<!-- Bootstrap --> 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+	
+	<!-- Bootstrap Icon -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+	<!-- Google Icon -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="assets/app.css">
+	<link rel="stylesheet" href="assets/navbar.css">
+	<link rel="stylesheet" href="assets/login.css">
+
+	<script>
+
+		$(document).ready(function(){
+
+			$.get( "_navbar.html", function( data ) {
+				$("#_navbar").html(data);     
+			});
+
+		});
+
+	</script>
+
+</head>
+
+<style>
+
+	#imagePanel {
+		width: 450px;
+		height: 450px;
+		background-color: #cccccc;
+	}
+
+	.imagePreview {
+		overflow: hidden;
+		max-width: 450px;
+		max-height: 450px;
+	}
+
+	.imagePreview img {
+		position: relative;
+		width: 100%;
+		/* opacity: 0.2; */
+		/* top:-150px; */
+	}
+
+	/* Color Panel */
+	.colornav-wrapper {
+		/* height: 104px; */
+		margin-top: 10px;
+	}
+
+	.colornav-wrapper ul {
+		margin-block-start: 0px;
+		margin-block-end: 0px;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 0px;
+		margin-bottom: 0px;
+	}
+	
+	.colornav-items {
+		padding-top: 0;
+	}
+
+	.colornav-item {
+		float: none;
+		margin: 0 2px;
+		display: inline-block;
+	}
+
+	.colornav-link {
+		border: 3px solid #cccccc;
+		border-radius: 50%;
+		box-sizing: border-box;
+		color: #1d1d1f;
+		cursor: pointer;
+		float: left;
+		margin-bottom: 30px;
+		margin-right: 25px;
+		padding: 3px;
+		position: relative;
+		width: 42px;
+		height: 42px;
+		z-index: 1;
+	}
+
+	.colornav-active {
+		border: 3px solid #0070f9;
+	}
+
+	.colornav-link:hover {
+		border: 3px solid #0070f9;
+	}
+
+	.colornav-swatch {
+		background: #f5f5f7 center center;
+		border-radius: 50%;
+		display: block;
+		width: 32px;
+		height: 32px;
+	}
+
+	.colornav-caption {
+		position: relative;
+		top: 35px;
+		left: -10px;
+		font-size: 12px;
+		min-width: 50px;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s linear;
+		
+	}
+
+	.show{
+		visibility: visible;
+  		opacity: 1;
+	}
+
+	.btn-add-custom {
+		background-color: #888f97;
+	}
+
+	.btn-add-custom:hover {
+		background-color: #666f77;
+	}
+
+	
+
+</style>
+
+<script>
+
+	$(document).ready(function(){
+
+		$('.colornav-link').click(function() {
+			$(this).addClass('colornav-active').siblings().removeClass('colornav-active');
+			$(this).find('.colornav-caption').addClass('show');
+			// removeShow();
+		});
+	});
+
+	function removeShow(){
+		$("div.colornav-caption").siblings().removeClass('show');
+	}
+
+	function showImagePreview(input){
+
+		var imageFile = $("input[id=inputFile]").get(0).files[0];
+		// if (this) {
+		// 	$("#imagePreview").src = URL.createObjectURL(this)
+		// }
+		if(imageFile){
+			var reader = new FileReader();
+			reader.onload = function(){
+				$("#imagePreview").attr("src", reader.result);
+			}
+			reader.readAsDataURL(imageFile);
+
+			$("#imagePreview").show();
+		}
+
+	}
+
+</script>
+
+<body>
+
+	<div id="_navbar"></div>
+
+	<div class="row">
+		<div class="col-md" style="text-align:center;">
+			<p class="topic"><b>ADD PRODUCT</b></p>
+		</div>
+	</div>
+
+	<div class="row justify-content-md-center">
+		<div class="col-md-7">
+			<form action="#saveproduct" method="post" style="padding:2em; background-color:#ffffff;text-align:left;">
+
+				<div class="form-group">
+					<label for="inputProductName"><b>PRODUCT NAME</b></label>
+					<input type="text" class="form-control" id="inputProductName" name="inputProductName" placeholder="GG Marmont crossbody bag">
+				</div>
+
+				<div class="form-row" >
+					<div class="form-group col-md-4">
+						<label for="inputPrice"><b>PRICE</b></label>
+						<input type="number" class="form-control" id="inputPrice" name="inputPrice" placeholder="999.00">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputDate"><b>MANUFACTURER DATE</b></label>
+						<input type="date" class="form-control" id="inputDate" name="inputDate">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputWarranty"><b>WARRANTY</b></label>
+						<select class="form-control" id="inputWarranty"  id="inputWarranty">
+							<option selected>3 Days</option>
+							<option selected>5 Days</option>
+							<option selected>7 Days</option>
+							<option selected>1 Month</option>
+							<option selected>None</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputSize"><b>SIZE</b></label>
+						<input type="text" class="form-control" id="inputSize" name="inputSize" placeholder="25 X 17 X 9 CM">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputState"><b>BRAND</b></label>
+						<select  class="form-control" id="inputState" name="inputState">
+							<option selected>Anello</option>
+							<option selected>Chanel</option>
+							<option selected>Dior</option>
+							<option selected>Guicci</option>
+							<option selected>Lyn</option>
+							<option selected>Ysl</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="productDescription"><b>PRODUCT DESCRIPTION</b></label>
+						<textarea class="form-control" id="productDescription" name="productDescription" rows="6"></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="coloranfimage"><b>COLOR & IMAGE</b></label><br>
+					<div class="colornav-wrapper">
+						<ul role="list" class="colornav-items">
+							<!-- fetch of color -->
+							<li class="colornav-item">
+								<button type="button" class="colornav-link" style="background-color:#B6B0E2;"><div class="colornav-caption">Purple</div></button>
+								<button type="button" class="colornav-link" style="background-color:#1B5893;"><div class="colornav-caption">Blue</div></button>
+								<button type="button" class="colornav-link" style="background-color:#C9EFBD;"><div class="colornav-caption">Green</div></button>
+								<button type="button" class="colornav-link" style="background-color:#E95950;"><div class="colornav-caption">Red</div></button>
+								<button type="button" class="colornav-link" style="background-color:#B08266;"><div class="colornav-caption">Brown</div></button>
+								<button type="button" class="colornav-link" style="background-color:#24212A;"><div class="colornav-caption">Black</div></button>
+								<button type="button" class="colornav-link" style="background-color:#FFFFFF;"><div class="colornav-caption">White</div></button>
+								<button type="button" class="colornav-link" style="background-color:#FFE383;"><div class="colornav-caption">Yellow</div></button>
+								<button type="button" class="colornav-link" style="background-color:#FEB877;"><div class="colornav-caption">Orange</div></button>
+								<button type="button" class="colornav-link" style="background-color:#C7F1FF;"><div class="colornav-caption">Sky Blue</div></button>
+								<button type="button" class="colornav-link" style="background-color:#AEAEAD;"><div class="colornav-caption">Gray</div></button>
+								<button type="button" class="colornav-link" style="background-color:#FFDAF7;"><div class="colornav-caption">Pink</div></button>
+								<button type="button" class="colornav-link" style="background-color:#FFF4E2;"><div class="colornav-caption">Cream</div></button>
+								<button type="button" class="colornav-link" style="background-color:#EDD9BB;"><div class="colornav-caption">Beige</div></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="form-row" style="margin-top: 30px;">
+					<div class="form-group col-md-12">
+						<input type="file" id="inputFile" name="inputFile" onchange="showImagePreview(this)">
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div id="imagePanel">
+							<div class="imagePreview">
+								<img src="#" id="imagePreview">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4" style="margin-top: 30px;">
+						<label for="inputStock"><b>Stock</b></label>
+						<input type="number" class="form-control" id="inputStock" name="inputStock" min="0">
+					</div>
+				</div>
+
+				<div style="margin-top: 5em;">
+					<button type="button" class="btn btn-secondary btn-lg btn-block  btn-add-custom ">ADD+</button>
+					<button type="submit" class="btn btn-primary btn-lg btn-block">SAVE</button>
+					<button type="button" class="btn btn-danger btn-lg btn-block">CANCEL</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoraWeb</title>
+
+    <!-- Bootstrap --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" href="assets/navbar.css">
+    <link rel="stylesheet" href="assets/login.css">
+
+</head>
+
+<style>
+.login-form {
+    margin: 13% auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .login-form {
+        margin: -5% auto;
+    }
+}
+
+</style>
+
+<body class="bg-login">
+
+    <div class="container-fluid">
+
+        <div id="login-panel"> 
+            <div class="row">
+                <div class="col-xl" style="text-align: center;">
+                    <div class="login-logo">
+                    <img src="image/app/Logo.png" style="width:100%; margin:-15%">
+                        <p class="login-logo-desc">The Dora website has bags from a variety of brands. <br> For the convenience of shopping.</p>
+                    </div>
+                </div>
+
+                <div class="col-xl" style="text-align: center;">
+                    <div class="login-form">
+                        <div style="color:#8966D7;margin:20px auto;font-weight:bold;font-size:20px;">REGISTER A NEW ACCOUNT</div>
+                        <form action="#dologin" method="post">
+                            <input type="text" class="form-control login-input" name="txtUserName" placeholder="User Name">
+                            <input type="text" class="form-control login-input" name="txtName" placeholder="Name">
+                            <input type="text" class="form-control login-input" name="txtLName" placeholder="Last Name">
+                            <input type="password" class="form-control login-input" name="txtPassword" placeholder="Password">
+                            <input type="password" class="form-control login-input" name="txtConfirmPassword" placeholder="Confirm Password">
+                            <button type="submit" class="btn btn-login">Register</button><br>
+                            <hr style="margin-top:50px">
+                            <div style="margin-top:30px; margin-bottom:20px">
+                                <a>Already have an account?</a><a href="login.html"> Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="login-panel-mobile">
+
+            <div class="row">
+                <div class="col-md" style="text-align: center;">
+                    <div class="login-logo">
+                        <img src="image/app/Logo.png">
+                        <p class="login-logo-desc">The Dora website has bags from a variety of brands. <br> For the convenience of shopping.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <div class="login-form">
+                        <div style="color:#8966D7;margin:10px auto;font-weight:bold;font-size:18px;">REGISTER A NEW ACCOUNT</div>
+                        <form action="#dologin" method="post">
+                            <input type="text" class="form-control login-input" name="txtUserName" placeholder="User Name">
+                            <input type="text" class="form-control login-input" name="txtName" placeholder="Name">
+                            <input type="text" class="form-control login-input" name="txtLName" placeholder="Last Name">
+                            <input type="password" class="form-control login-input" name="txtPassword" placeholder="Password">
+                            <input type="password" class="form-control login-input" name="txtConfirmPassword" placeholder="Confirm Password">
+                            <button class="btn btn-login">Register</button><br>
+                            <hr style="margin-top:50px">
+                            <div style="margin-top:30px; margin-bottom:20px">
+                                <a>Already have an account?</a><a href="login.html"> Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

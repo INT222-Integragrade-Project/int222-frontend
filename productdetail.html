@@ -45,29 +45,65 @@
 
 <style>
 
-	#imagePanel {
-		width: 450px;
-		height: 450px;
-		background-color: #cccccc;
-	}
-
-	.imagePreview {
-		overflow: hidden;
-		max-width: 450px;
-		max-height: 450px;
-	}
-
-	.imagePreview img {
-		position: relative;
+	#productDetail {
+		background-color: #ffffff;
+		min-height: 600px;
 		width: 100%;
-		/* opacity: 0.2; */
-		/* top:-150px; */
+		padding: 50px;
 	}
+
+	.detailContent {
+		text-align: left;
+		margin: 0% 10%;
+	}
+
+	.detail-title {
+		font-weight: bold;
+		font-size: 30px;
+	}
+
+	.detail-productid {
+		font-size: 14px;
+	}
+
+	.detail-price {
+		display: inline-block;
+		font-weight: bold;
+		font-size: 30px;
+	}
+	
+	.detail-amount {
+		display: inline-block;
+		font-weight: bold;
+		font-size: 12px;
+	}
+
+	.detail-description {
+		font-size: 15px;
+	}
+
+	.detail-description .title {
+		font-weight: bold;
+		font-size: 15px;
+		margin: 18px auto;
+	}
+
+	.detail-warranty {
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	.detail-color {
+		text-align: left;
+		margin: 25px auto 25px 0px;	
+		max-width: 270px;
+	}
+
 
 	/* Color Panel */
 	.colornav-wrapper {
 		/* height: 104px; */
-		margin-top: 10px;
+		margin-top: 20px;
 	}
 
 	.colornav-wrapper ul {
@@ -89,33 +125,29 @@
 		display: inline-block;
 	}
 
-	
-	
 	.colornav-link {
-		border: 2px solid #cccccc;
-		border-radius: 50%;
+		border: 1px solid #cccccc;
+		/* border-radius: 50%; */
 		box-sizing: border-box;
 		color: #1d1d1f;
 		cursor: pointer;
 		float: left;
-		margin-bottom: 0px;
+		margin-bottom: 30px;
+		margin-right: 8px;
 		padding: 3px;
 		position: relative;
-		width: 42px;
-		height: 42px;
+		width: 30px;
+		height: 30px;
 		z-index: 1;
 	}
 
+	.colornav-active {
+		border: 3px solid #0070f9;
+	}
+
 	.colornav-link:hover {
-		border: 2px solid #0070f9;
+		border: 2px solid #002e66;
 	}
-
-	.colornav-item:focus {
-		outline: 4px solid rgba(0,125,250,0.6);
-		outline-offset: 1px;
-	}
-
-
 
 	.colornav-swatch {
 		background: #f5f5f7 center center;
@@ -125,9 +157,54 @@
 		height: 32px;
 	}
 
+	.colornav-caption {
+		position: relative;
+		top: -27px;
+		left: -24px;
+		font-size: 12px;
+		min-width: 50px;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s linear;
+		
+	}
+
+	.show{
+		visibility: visible;
+  		opacity: 1;
+	}
+
+	@media only screen and (max-width: 970px) {
+
+		.detail-title {
+			font-weight: bold;
+			font-size: 25px;
+		}
+
+		.detail-price {
+			display: inline-block;
+			font-weight: bold;
+			font-size: 25px;
+		}
+	}
+	
 </style>
 
 <script>
+
+	$(document).ready(function(){
+
+		$('.colornav-link').hover(function() {
+			$(this).addClass('colornav-active').siblings().removeClass('colornav-active');
+			$(this).find('.colornav-caption').addClass('show');
+			// removeShow();
+			// color-selected
+		});
+	});
+
+	function removeShow(){
+		$("div.colornav-caption").siblings().removeClass('show');
+	}
 
 	function showImagePreview(input){
 
@@ -153,157 +230,83 @@
 
 	<div id="_navbar"></div>	
 
-	<div class="row">
-		<div class="col-md" style="text-align:center;">
-			<p class="topic"><b>PRODUCT DETAIL</b></p>
+	<div class="container" style="max-width: 1200px;">
+		<div class="row">
+			<div class="col-md" style="text-align:center;">
+				<p class="topic"><b>PRODUCT DETAIL</b></p>
+			</div>
 		</div>
-	</div>
+		
+		<div id="productDetail">
 
-	<div class="row justify-content-md-center">
-		<div class="col-md-7">
-			<form action="#saveproduct" method="post" style="padding:2em; background-color:#ffffff;text-align:left;">
-
-				<div class="form-group">
-					<label for="inputProductName">PRODUCT NAME</label>
-					<input type="text" class="form-control" id="inputProductName" name="inputProductName" placeholder="GG Marmont crossbody bag">
-				</div>
-
-				<div class="form-row" >
-					<div class="form-group col-md-4">
-						<label for="inputPrice">PRICE</label>
-						<input type="number" class="form-control" id="inputPrice" name="inputPrice" placeholder="999.00">
-					</div>
-					<div class="form-group col-md-4">
-						<label for="inputDate">MANUFACTURER DATE</label>
-						<input type="date" class="form-control" id="inputDate" name="inputDate">
-					</div>
-					<div class="form-group col-md-4">
-						<label for="inputWarranty">WARRANTY</label>
-						<select class="form-control" id="inputWarranty"  id="inputWarranty">
-							<option selected>3 Days</option>
-							<option selected>5 Days</option>
-							<option selected>7 Days</option>
-							<option selected>1 Month</option>
-							<option selected>None</option>
-						</select>
+			<div class="row">
+				<div class="col-md" style="text-align: right;">
+					<div class="imageContent">
+						image content
 					</div>
 				</div>
-
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<label for="inputSize">SIZE</label>
-						<input type="text" class="form-control" id="inputSize" name="inputSize" placeholder="25 X 17 X 9 CM">
-					</div>
-					<div class="form-group col-md-6">
-						<label for="inputState">BRAND</label>
-						<select  class="form-control" id="inputState" name="inputState">
-							<option selected>Anello</option>
-							<option selected>Chanel</option>
-							<option selected>Dior</option>
-							<option selected>Guicci</option>
-							<option selected>Lyn</option>
-							<option selected>Ysl</option>
-						</select>
-					</div>
-				</div>
-
-				<div class="form-row">
-					<div class="form-group col-md-12">
-						<label for="productDescription">PRODUCT DESCRIPTION</label>
-						<textarea class="form-control" id="productDescription" name="productDescription" rows="6"></textarea>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="coloranfimage">COLOR & IMAGE</label><br>
-					<div class="colornav-wrapper">
-						<ul role="list" class="colornav-items">
-							<!-- fetch of color -->
-							<li class="colornav-item">
-								<button type="button" class="colornav-link" style="background-color:#B6B0E2;"><div class="caption">Purple</div></button>
-								<button type="button" class="colornav-link" style="background-color:#1B5893;"><div class="caption">Blue</div></button>
-								<button type="button" class="colornav-link" style="background-color:#C9EFBD;"><div class="caption">Green</div></button>
-								<button type="button" class="colornav-link" style="background-color:#E95950;"><div class="caption">Red</div></button>
-								<button type="button" class="colornav-link" style="background-color:#B08266;"><div class="caption">Brown</div></button>
-								<button type="button" class="colornav-link" style="background-color:#24212A;"><div class="caption">Black</div></button>
-								<button type="button" class="colornav-link" style="background-color:#FFFFFF;"><div class="caption">White</div></button>
-								<button type="button" class="colornav-link" style="background-color:#FFE383;"><div class="caption">Yellow</div></button>
-								<button type="button" class="colornav-link" style="background-color:#FEB877;"><div class="caption">Orange</div></button>
-								<button type="button" class="colornav-link" style="background-color:#C7F1FF;"><div class="caption">Sky Blue</div></button>
-								<button type="button" class="colornav-link" style="background-color:#AEAEAD;"><div class="caption">Gray</div></button>
-								<button type="button" class="colornav-link" style="background-color:#FFDAF7;"><div class="caption">Pink</div></button>
-								<button type="button" class="colornav-link" style="background-color:#FFF4E2;"><div class="caption">Cream</div></button>
-								<button type="button" class="colornav-link" style="background-color:#EDD9BB;"><div class="caption">Beige</div></button>
-							</li>
-						</ul>
-					</div>
+				<div class="col-md" style="text-align: center;">
 					
-					<br>
+					<div class="detailContent">
+						<div class="detail-title">Ida Mini Crossbody Bag</div>
+						<div class="detail-productid">รหัสสินค้า : LL21FBF071</div>
 
-					<!-- <div class="colornav-wrapper">
-						<ul role="list" aria-label="Select a finish for iPhone 12 Pro" class="colornav-items">
-							<li class="colornav-item">
-								<button type="button" class="colornav-link">
-									<figure class="colornav-swatch colornav-swatch-pacificblue">
-										<figcaption class="colornav-label">แปซิฟิกบลู</figcaption>
-									</figure>
-								</button>
-							</li>
-							<li class="colornav-item">
-								<button type="button" class="colornav-link current" aria-selected="true">
-									<figure class="colornav-swatch colornav-swatch-gold">
-										<figcaption class="colornav-label">ทอง</figcaption>
-									</figure>
-								</button>
-							</li>
-							<li class="colornav-item">
-								<button type="button" class="colornav-link">
-									<figure class="colornav-swatch colornav-swatch-graphite">
-										<figcaption class="colornav-label">กราไฟต์</figcaption>
-									</figure>
-								</button>
-							</li>
-							<li class="colornav-item">
-								<button type="button" class="colornav-link">
-									<figure class="colornav-swatch colornav-swatch-silver">
-										<figcaption class="colornav-label">เงิน</figcaption>
-									</figure>
-								</button>
-							</li>
-						</ul>
-					</div> -->
+						<div class="detail-price">1,990 THB</div> 
+						<div class="detail-amount">Amount 1000 pc.</div>
 
-				</div>
+						<div class="detail-description">
+							<div class="title">รายละเอียด</div>
+							<ul>
+								<li>กระเป๋าทรงสี่เหลี่ยม</li>
+								<li>ฝาพับกระเป๋าเปิดปิดแม่เหล็ก</li>
+								<li>โลโก้ประดับด้านหน้า</li>
+								<li>หูหิ้วกระเป๋า</li>
+								<li>ช่องเก็บสัมภาระแยก</li>
+								<li>สายกระเป๋าถอดปรับได้</li>
+								<li>หนังพียู</li>
+							</ul>
 
-				<div class="form-row">
-					<div class="form-group col-md-12">
-						<input type="file" id="inputFile" name="inputFile" onchange="showImagePreview(this)">
-					</div>
-				</div>
+							<div class="title">รายละเอียด</div>
+							<ul>
+								<li>กว้าง x ยาว x สูง x ฐาน</li>
+							</ul>
+						</div>
 
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<div id="imagePanel">
-							<div class="imagePreview">
-								<img src="#" id="imagePreview">
+						<div class="detail-warranty">รับประกัน : 7 วัน</div>
+
+						<div class="detail-color">
+							<label for="coloranfimage"><b>Color</b></label><span id="color-selected"></span><br>
+							<div class="colornav-wrapper">
+								<ul role="list" class="colornav-items">
+									<!-- fetch of color -->
+									<li class="colornav-item">
+										<button type="button" class="colornav-link" style="background-color:#B6B0E2;"><div class="colornav-caption">Purple</div></button>
+										<button type="button" class="colornav-link" style="background-color:#1B5893;"><div class="colornav-caption">Blue</div></button>
+										<button type="button" class="colornav-link" style="background-color:#C9EFBD;"><div class="colornav-caption">Green</div></button>
+										<button type="button" class="colornav-link" style="background-color:#E95950;"><div class="colornav-caption">Red</div></button>
+										<button type="button" class="colornav-link" style="background-color:#B08266;"><div class="colornav-caption">Brown</div></button>
+										<button type="button" class="colornav-link" style="background-color:#24212A;"><div class="colornav-caption">Black</div></button>
+										<button type="button" class="colornav-link" style="background-color:#FFFFFF;"><div class="colornav-caption">White</div></button>
+										<button type="button" class="colornav-link" style="background-color:#FFE383;"><div class="colornav-caption">Yellow</div></button>
+										<button type="button" class="colornav-link" style="background-color:#FEB877;"><div class="colornav-caption">Orange</div></button>
+										<button type="button" class="colornav-link" style="background-color:#C7F1FF;"><div class="colornav-caption">Sky Blue</div></button>
+										<button type="button" class="colornav-link" style="background-color:#AEAEAD;"><div class="colornav-caption">Gray</div></button>
+										<button type="button" class="colornav-link" style="background-color:#FFDAF7;"><div class="colornav-caption">Pink</div></button>
+										<button type="button" class="colornav-link" style="background-color:#FFF4E2;"><div class="colornav-caption">Cream</div></button>
+										<button type="button" class="colornav-link" style="background-color:#EDD9BB;"><div class="colornav-caption">Beige</div></button>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="form-group col-md-3">
-						<label for="inputStock">Stock</label>
-						<input type="number" class="form-control" id="inputStock" name="inputStock" min="0">
-					</div>
-				</div>
 
-				<div style="margin-top: 5em;">
-					<button type="button" class="btn btn-primary btn-lg btn-block">ADD+</button>
-					<button type="submit" class="btn btn-secondary btn-lg btn-block">SAVE</button>
-					<button type="button" class="btn btn-secondary btn-lg btn-block">CANCLE</button>
 				</div>
+			</div>
 
-			</form>
 		</div>
+
 	</div>
+
 
 </body>
 </html>
